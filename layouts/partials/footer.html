@@ -12,10 +12,10 @@
 
   function localTimer() {
     var today = new Date();
-    var time = addZero(today.getHours()) + ":" + addZero(today.getMinutes()) + ":" + addZero(today.getSeconds());
+    var time = addZero(today.getHours() % 12) + ":" + addZero(today.getMinutes()) + ":" + addZero(today.getSeconds());
     document.getElementById("current_time").innerHTML = time;
 
-    var date = today.getDate()+' . '+(today.getMonth()+1)+' . '+today.getFullYear();
+    var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
     document.getElementById("current_date").innerHTML = date;
 }
 </script>
